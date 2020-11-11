@@ -23,7 +23,7 @@ public class Correo implements Serializable {
 	private int emisor;
 	private String titulo;
 	private String cuerpo;	
-	@OneToMany(mappedBy="adjuntos", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy="adjunto", cascade = CascadeType.ALL)
 	private List<Adjunto> adjuntos;
 	private boolean estado;
 	@ManyToMany (cascade = CascadeType.ALL)

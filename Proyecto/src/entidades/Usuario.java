@@ -15,7 +15,9 @@ public class Usuario implements Serializable {
  private int id;
 
  private String nombre;
-
+ 
+ @ManyToOne
+ @JoinColumn(name="idComponente")
  private int componente;
 
  private String correo;

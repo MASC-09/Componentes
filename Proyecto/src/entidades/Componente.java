@@ -18,10 +18,11 @@ public class Componente implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
+	@ManyToMany(mappedBy="Correo")
 	private int id;
 	private String nombreSistema;
-	@OneToMany(mappedBy="Usuarios", cascade = CascadeType.ALL)
-	private List<Integer> Usuario;
+	@OneToMany(mappedBy="Componente", cascade = CascadeType.ALL)
+	private List<Usuario> Usuarios;
 
 	public Componente() {
 		super();
@@ -43,15 +44,12 @@ public class Componente implements Serializable {
 		this.nombreSistema = nombreSistema;
 	}
 
-	public List<Integer> getUsuario() {
-		return Usuario;
+	public List<Usuario> getUsuarios() {
+		return Usuarios;
 	}
 
-	public void setUsuario(List<Integer> usuario) {
-		Usuario = usuario;
+	public void setUsuarios(List<Usuario> usuarios) {
+		Usuarios = usuarios;
 	}
 
-	
-   
-	
 }
