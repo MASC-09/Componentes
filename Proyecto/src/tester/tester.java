@@ -7,7 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import entidades.Correos;
+import entidades.*;
 
 public class tester {
 	
@@ -17,31 +17,31 @@ public class tester {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		try {
-		startEntityManagerFactory();
-		
-		Correos co = new Correos();
-		Usuario usuario = new Usuario();
-		String titulo = "Correo de Prueba";
-		String cuerpo = "Este corre o tiene como proposito hacer una prueba de las entidades";
-		List<Integer> listaAdjuntos = new ArrayList();
-		listaAdjuntos.add(1);
-		listaAdjuntos.add(2);
-		listaAdjuntos.add(3);
-		listaAdjuntos.add(4);
-		
-		List<String> receptores = new ArrayList();
-		receptores.add("hola@gmail.com");
-		receptores.add("donare_es_facil@gamil.com");
-		receptores.add("blueCore0220@gamil.com");
-		
-		co.setCorreoID(new Integer("1"));
-		co.setEmisor(usuario.getId());
-		co.setTitulo(titulo);
-		co.setCuerpo(cuerpo);
-		co.setAdjuntos(listaAdjuntos);
-		co.setEstado(false);
-		co.setComponente(new Integer("4"));
-		co.setReceptores(receptores);	
+            startEntityManagerFactory();
+
+            Correo co = new Correo();
+            Usuario usuario = new Usuario();
+            String titulo = "Correo de Prueba";
+            String cuerpo = "Este corre o tiene como proposito hacer una prueba de las entidades";
+            List<Adjunto> listaAdjuntos = new ArrayList();
+            //listaAdjuntos.add();
+            //listaAdjuntos.add(2);
+            //listaAdjuntos.add(3);
+            //listaAdjuntos.add(4);
+            
+            //List<String> receptores = Usuario.all();
+            //receptores.add("hola@gmail.com");
+            //receptores.add("donare_es_facil@gamil.com");
+            //receptores.add("blueCore0220@gamil.com");
+            
+            //co.setCorreoID();
+            //co.setEmisor(usuario);
+            //co.setTitulo(titulo);
+            //co.setCuerpo(cuerpo);
+            //co.setAdjuntos(listaAdjuntos);
+            //co.setEstado(false);
+            //co.setComponente(new Integer("4"));
+            //co.setReceptores(receptores);	
 		
 		
 		
@@ -52,13 +52,6 @@ public class tester {
 		}finally {
 			stopEntityManagerFactory();
 		}
-		
-		
-		
-		
-		
-		
-		
 
 	}
 	

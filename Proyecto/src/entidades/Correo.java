@@ -2,7 +2,6 @@ package entidades;
 
 import java.io.Serializable;
 import java.util.List;
-
 import javax.persistence.*;
 
 /**
@@ -12,8 +11,10 @@ import javax.persistence.*;
  */
 @Entity
 
-public class Correos implements Serializable {
+public class Correo implements Serializable {
 	
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	private int correoID;
 	private String date;
@@ -23,7 +24,7 @@ public class Correos implements Serializable {
 	private String titulo;
 	private String cuerpo;	
 	@OneToMany(mappedBy="adjuntos", cascade = CascadeType.ALL)
-	private List<Integer> adjuntos;
+	private List<Adjunto> adjuntos;
 	private boolean estado;
 	@ManyToMany (cascade = CascadeType.ALL)
 	@JoinTable(name = "Correo_Componente", 
@@ -32,12 +33,7 @@ public class Correos implements Serializable {
 	private int componente;
 	private List<String> receptores;
 	
-	
-	
-	
-	private static final long serialVersionUID = 1L;
-
-	public Correos() {
+	public Correo() {
 		super();
 	}
 
@@ -81,11 +77,11 @@ public class Correos implements Serializable {
 		this.cuerpo = cuerpo;
 	}
 
-	public List<Integer> getAdjuntos() {
+	public List<Adjunto> getAdjuntos() {
 		return adjuntos;
 	}
 
-	public void setAdjuntos(List<Integer> adjuntos) {
+	public void setAdjuntos(List<Adjunto> adjuntos) {
 		this.adjuntos = adjuntos;
 	}
 

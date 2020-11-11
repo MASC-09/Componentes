@@ -1,4 +1,13 @@
 package entidades;
+
+import java.io.Serializable;
+import java.util.List;
+import java.util.stream.Stream;
+
+import javax.persistence.*;
+
+import entidades.Correo;
+
 /**
  * Entity implementation class for Entity: Adjunto
  *
@@ -6,6 +15,8 @@ package entidades;
 @Entity
 
 public class Adjunto implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	private int id;
@@ -15,8 +26,6 @@ public class Adjunto implements Serializable {
 	private Correo correo;
 	
 	private Stream adjunto;
-	private static final long serialVersionUID = 1L;
-
 	public Adjunto() {
 		super();
 	}
@@ -36,7 +45,17 @@ public class Adjunto implements Serializable {
 	public void setAdjunto(Stream adjunto) {
 		this.adjunto = adjunto;
 	}
-   
-	
+
+    public Correo getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(Correo correo) {
+        this.correo = correo;
+    }
+
+    public static long getSerialversionuid() {
+        return serialVersionUID;
+    }
 	
 }

@@ -1,8 +1,6 @@
-package Componente;
-
+package entidades;
 import java.io.Serializable;
 import java.util.List;
-
 import javax.persistence.*;
 
 /**
@@ -16,14 +14,14 @@ public class Componente implements Serializable {
 
 	//En un componente pueden haber MUCHOS Correos
 	//Un componente puede tener muchos usuarios
-	
+		
+	private static final long serialVersionUID = 1L;
 	
 	@Id
 	private int id;
 	private String nombreSistema;
 	@OneToMany(mappedBy="Usuarios", cascade = CascadeType.ALL)
 	private List<Integer> Usuario;
-	private static final long serialVersionUID = 1L;
 
 	public Componente() {
 		super();

@@ -1,10 +1,9 @@
-
 package entidades;
 
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
-import entidades.Correos;
+import entidades.Correo;
 
 /**
  * Entity implementation class for Entity: Correos
@@ -13,15 +12,17 @@ import entidades.Correos;
 @Entity
 public class Job implements Serializable {
 
-  @Id
-  private int id;
-  private Date now;
-  private Date next_run;
-  private Correos correo;
+    private static final long serialVersionUID = 1L;
 
-	public Job() {
-		super();
-	}
+    @Id
+    private int id;
+    private Date now;
+    private Date next_run;
+    private Correo correo;
+
+    public Job() {
+        super();
+    }
 
     public int getId() {
         return id;
@@ -47,11 +48,11 @@ public class Job implements Serializable {
         this.next_run = next_run;
     }
 
-    public Correos getCorreo() {
+    public Correo getCorreo() {
         return correo;
     }
 
-    public void setCorreo(Correos correo) {
+    public void setCorreo(Correo correo) {
         this.correo = correo;
     }
 }

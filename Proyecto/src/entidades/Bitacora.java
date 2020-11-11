@@ -10,7 +10,7 @@ import javax.persistence.*;
  */
 @Entity
 
-public class Correos implements Serializable {
+public class Bitacora implements Serializable {
 	
 	@Id
 	private int bitacoraID;
