@@ -9,7 +9,7 @@
 		<class>entidades.Job</class>
 				
 		<properties>
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/ComponenteCorreos"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/componentecorreos"/>
 			<property name="javax.persistence.jdbc.user" value="admin"/>
 			<property name="javax.persistence.jdbc.password" value="admin"/>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
