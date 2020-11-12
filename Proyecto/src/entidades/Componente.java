@@ -52,4 +52,40 @@ public class Componente implements Serializable {
 		Usuarios = usuarios;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((Usuarios == null) ? 0 : Usuarios.hashCode());
+		result = prime * result + id;
+		result = prime * result + ((nombreSistema == null) ? 0 : nombreSistema.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Componente other = (Componente) obj;
+		if (Usuarios == null) {
+			if (other.Usuarios != null)
+				return false;
+		} else if (!Usuarios.equals(other.Usuarios))
+			return false;
+		if (id != other.id)
+			return false;
+		if (nombreSistema == null) {
+			if (other.nombreSistema != null)
+				return false;
+		} else if (!nombreSistema.equals(other.nombreSistema))
+			return false;
+		return true;
+	}
+	
+	
+
 }
