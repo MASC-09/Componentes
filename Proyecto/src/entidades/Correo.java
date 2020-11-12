@@ -108,6 +108,67 @@ public class Correo implements Serializable {
 	public void setReceptores(List<String> receptores) {
 		this.receptores = receptores;
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((adjuntos == null) ? 0 : adjuntos.hashCode());
+		result = prime * result + componente;
+		result = prime * result + correoID;
+		result = prime * result + ((cuerpo == null) ? 0 : cuerpo.hashCode());
+		result = prime * result + ((date == null) ? 0 : date.hashCode());
+		result = prime * result + emisor;
+		result = prime * result + (estado ? 1231 : 1237);
+		result = prime * result + ((receptores == null) ? 0 : receptores.hashCode());
+		result = prime * result + ((titulo == null) ? 0 : titulo.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Correo other = (Correo) obj;
+		if (adjuntos == null) {
+			if (other.adjuntos != null)
+				return false;
+		} else if (!adjuntos.equals(other.adjuntos))
+			return false;
+		if (componente != other.componente)
+			return false;
+		if (correoID != other.correoID)
+			return false;
+		if (cuerpo == null) {
+			if (other.cuerpo != null)
+				return false;
+		} else if (!cuerpo.equals(other.cuerpo))
+			return false;
+		if (date == null) {
+			if (other.date != null)
+				return false;
+		} else if (!date.equals(other.date))
+			return false;
+		if (emisor != other.emisor)
+			return false;
+		if (estado != other.estado)
+			return false;
+		if (receptores == null) {
+			if (other.receptores != null)
+				return false;
+		} else if (!receptores.equals(other.receptores))
+			return false;
+		if (titulo == null) {
+			if (other.titulo != null)
+				return false;
+		} else if (!titulo.equals(other.titulo))
+			return false;
+		return true;
+	}
 	
 	
 	
