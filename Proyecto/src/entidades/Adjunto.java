@@ -2,7 +2,6 @@ package entidades;
 
 import java.io.Serializable;
 import java.util.List;
-import java.util.stream.Stream;
 
 import javax.persistence.*;
 
@@ -22,10 +21,10 @@ public class Adjunto implements Serializable {
 	private int id;
 	
     @ManyToOne
-	@JoinColumn(name = "idCorreo")	
+	@JoinColumn(name = "idCorreo")
 	private Correo correo;
 	
-	private Stream adjunto;
+	private String adjunto;
 	public Adjunto() {
 		super();
 	}
@@ -38,11 +37,11 @@ public class Adjunto implements Serializable {
 		this.id = id;
 	}
 
-	public Stream getAdjunto() {
+	public String getAdjunto() {
 		return adjunto;
 	}
 
-	public void setAdjunto(Stream adjunto) {
+	public void setAdjunto(String adjunto) {
 		this.adjunto = adjunto;
 	}
 

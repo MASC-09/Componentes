@@ -1,6 +1,7 @@
 package entidades;
 import java.io.Serializable;
 import java.util.List;
+import java.util.Set;
 import javax.persistence.*;
 
 /**
@@ -18,11 +19,14 @@ public class Componente implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@ManyToMany(mappedBy="Correo")
 	private int id;
 	private String nombreSistema;
-	@OneToMany(mappedBy="Componente", cascade = CascadeType.ALL)
-	private List<Usuario> Usuarios;
+
+	@OneToMany(mappedBy="correoID", cascade = CascadeType.ALL)
+	private Set<Correo> correos;
+
+	@OneToMany(mappedBy="id", cascade = CascadeType.ALL)
+	private Set<Usuario> Usuarios;
 
 	public Componente() {
 		super();
@@ -44,11 +48,11 @@ public class Componente implements Serializable {
 		this.nombreSistema = nombreSistema;
 	}
 
-	public List<Usuario> getUsuarios() {
+	public Set<Usuario> getUsuarios() {
 		return Usuarios;
 	}
 
-	public void setUsuarios(List<Usuario> usuarios) {
+	public void setUsuarios(Set<Usuario> usuarios) {
 		Usuarios = usuarios;
 	}
 

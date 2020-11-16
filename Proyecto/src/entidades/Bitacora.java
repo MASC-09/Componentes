@@ -19,21 +19,6 @@ public class Bitacora implements Serializable {
     private String entidad;
     private int entidadID;
 
-	// @ManyToOne
-	// @JoinColumn(name = "idUsuario")
-	// private int emisor;
-	// private String titulo;
-	// private String cuerpo;	
-	// @OneToMany(mappedBy="adjuntos", cascade = CascadeType.ALL)
-	// private List<Integer> adjuntos;
-	// private boolean estado;
-	// @ManyToMany (cascade = CascadeType.ALL)
-	// @JoinTable(name = "Correo_Componente", 
-	//    joinColumns = { @JoinColumn(name = "idCorreo") }, 
-	//    inverseJoinColumns = { @JoinColumn(name = "idComponente") })
-	// private int componente;
-	// private List<String> receptores;
-	
 	private static final long serialVersionUID = 1L;
 
 	public Bitacora() {
