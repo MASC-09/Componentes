@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/Users/gabri/OneDrive/Documentos/NetBeansProjects/Librerias Java/mysql-connector-java-8.0.16.jar"/>
-	<classpathentry kind="lib" path="C:/Users/gabri/OneDrive/Documentos/Curso de Componentes/hibernate_libs/antlr-2.7.6.jar"/>
-	<classpathentry kind="lib" path="C:/Users/gabri/OneDrive/Documentos/Curso de Componentes/hibernate_libs/cglib-2.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/gabri/OneDrive/Documentos/Curso de Componentes/hibernate_libs/commons-collections-3.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/gabri/OneDrive/Documentos/Curso de Componentes/hibernate_libs/dom4j-1.6.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/gabri/OneDrive/Documentos/Curso de Componentes/hibernate_libs/hibernate3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/gabri/OneDrive/Documentos/Curso de Componentes/hibernate_libs/hibernate-jpa-2.0-api-1.0.0.Final.jar"/>
-	<classpathentry kind="lib" path="C:/Users/gabri/OneDrive/Documentos/Curso de Componentes/hibernate_libs/javassist-3.12.0.GA.jar"/>
-	<classpathentry kind="lib" path="C:/Users/gabri/OneDrive/Documentos/Curso de Componentes/hibernate_libs/jta-1.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/gabri/OneDrive/Documentos/Curso de Componentes/hibernate_libs/slf4j-api-1.6.1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/freexploit/code/Componentes/hibernate_libs/antlr-2.7.6.jar"/>
+	<classpathentry kind="lib" path="/home/freexploit/code/Componentes/hibernate_libs/cglib-2.2.jar"/>
+	<classpathentry kind="lib" path="/home/freexploit/code/Componentes/hibernate_libs/commons-collections-3.1.jar"/>
+	<classpathentry kind="lib" path="/home/freexploit/code/Componentes/hibernate_libs/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="/home/freexploit/code/Componentes/hibernate_libs/hibernate3.jar"/>
+	<classpathentry kind="lib" path="/home/freexploit/code/Componentes/hibernate_libs/hibernate-jpa-2.0-api-1.0.0.Final.jar"/>
+	<classpathentry kind="lib" path="/home/freexploit/code/Componentes/hibernate_libs/javassist-3.12.0.GA.jar"/>
+	<classpathentry kind="lib" path="/home/freexploit/code/Componentes/hibernate_libs/jta-1.1.jar"/>
+	<classpathentry kind="lib" path="/home/freexploit/code/Componentes/mysql-connector-java-8.0.16.jar"/>
+	<classpathentry kind="lib" path="/home/freexploit/code/Componentes/hibernate_libs/slf4j-api-1.6.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

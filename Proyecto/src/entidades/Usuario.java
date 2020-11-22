@@ -4,28 +4,39 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 
-
 @Entity
 public class Usuario implements Serializable {
  
  private static final long serialVersionUID = 1L;
 
  @Id
- private int id;
+ @GeneratedValue(strategy=GenerationType.IDENTITY)
+ private Long idUsuario;
  private String nombre;
  private String correo;
  private String contrasena;
 
+ @ManyToOne
+ @JoinColumn(name="idDepartamento")
+ private Departamento departamento;
+
+ public Departamento getDepartamento() {
+     return departamento;
+ }
+
+ public void setDepartamento(Departamento departamento) {
+     this.departamento = departamento;
+ }
 
  public Usuario () {
  }
 
- public int getId() {
-  return this.id;
+ public Long getIdUsuario() {
+  return this.idUsuario;
  }
 
- public void setId (int id) {
-  this.id = id;
+ public void setIdUsuario(Long idUsuario) {
+  this.idUsuario = idUsuario;
  }
 
  public String getNombre () {
@@ -51,16 +62,16 @@ public class Usuario implements Serializable {
   this.contrasena = contrasena;
  }
 
-@Override
-public int hashCode() {
-	final int prime = 31;
-	int result = 1;
-	result = prime * result + ((contrasena == null) ? 0 : contrasena.hashCode());
-	result = prime * result + ((correo == null) ? 0 : correo.hashCode());
-	result = prime * result + id;
-	result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
-	return result;
-}
+//@Override
+//public int hashCode() {
+//	final int prime = 31;
+//	long result = 1;
+//	result = prime * result + ((contrasena == null) ? 0 : contrasena.hashCode());
+//	result = prime * result + ((correo == null) ? 0 : correo.hashCode());
+//	result = prime * result + (Long idUsuario);
+//	result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
+//	return result;
+//}
 
 @Override
 public boolean equals(Object obj) {
@@ -81,7 +92,7 @@ public boolean equals(Object obj) {
 			return false;
 	} else if (!correo.equals(other.correo))
 		return false;
-	if (id != other.id)
+	if (idUsuario != other.idUsuario)
 		return false;
 	if (nombre == null) {
 		if (other.nombre != null)

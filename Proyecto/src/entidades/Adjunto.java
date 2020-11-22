@@ -1,11 +1,7 @@
 package entidades;
 
 import java.io.Serializable;
-import java.util.List;
-
 import javax.persistence.*;
-
-import entidades.Correo;
 
 /**
  * Entity implementation class for Entity: Adjunto

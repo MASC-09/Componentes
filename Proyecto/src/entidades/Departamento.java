@@ -1,17 +1,16 @@
 package entidades;
 import java.io.Serializable;
-import java.util.List;
 import java.util.Set;
 import javax.persistence.*;
 
 /**
- * Entity implementation class for Entity: Componente
+ * Entity implementation class for Entity: Departamento
  * La identidad tiene los atributos: Id de tipo Int, nombreSistema de tipo String y Admin de tipo Int
  * 
  */
 @Entity
 
-public class Componente implements Serializable {
+public class Departamento implements Serializable {
 
 	//En un componente pueden haber MUCHOS Correos
 	//Un componente puede tener muchos usuarios
@@ -19,25 +18,27 @@ public class Componente implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	private int id;
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int idDepartamento;
 	private String nombreSistema;
 
-	@OneToMany(mappedBy="correoID", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy="correoID")
 	private Set<Correo> correos;
 
-	@OneToMany(mappedBy="id", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy="idUsuario", cascade=CascadeType.ALL)
 	private Set<Usuario> Usuarios;
 
-	public Componente() {
+
+	public Departamento() {
 		super();
 	}
 
-	public int getId() {
-		return id;
+	public int getIdDepartamento() {
+		return idDepartamento;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setIdDepartamento(int idDepartamento) {
+		this.idDepartamento = idDepartamento;
 	}
 
 	public String getNombreSistema() {
@@ -61,7 +62,7 @@ public class Componente implements Serializable {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((Usuarios == null) ? 0 : Usuarios.hashCode());
-		result = prime * result + id;
+		result = prime * result + idDepartamento;
 		result = prime * result + ((nombreSistema == null) ? 0 : nombreSistema.hashCode());
 		return result;
 	}
@@ -74,13 +75,13 @@ public class Componente implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Componente other = (Componente) obj;
+		Departamento other = (Departamento) obj;
 		if (Usuarios == null) {
 			if (other.Usuarios != null)
 				return false;
 		} else if (!Usuarios.equals(other.Usuarios))
 			return false;
-		if (id != other.id)
+		if (idDepartamento != other.idDepartamento)
 			return false;
 		if (nombreSistema == null) {
 			if (other.nombreSistema != null)

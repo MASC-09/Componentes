@@ -22,7 +22,7 @@ public class Correo implements Serializable {
 	private Date date;
 
 
-	@ManyToOne
+	@OneToOne
 	private Usuario emisor;
 
 	private String titulo;

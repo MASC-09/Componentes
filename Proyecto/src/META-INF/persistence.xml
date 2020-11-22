@@ -4,7 +4,7 @@
 		<class>entidades.Correo</class>
 		<class>entidades.Adjunto</class>
 		<class>entidades.Bitacora</class>
-		<class>entidades.Componente</class>
+		<class>entidades.Departamento</class>
 		<class>entidades.Usuario</class>
 		<class>entidades.Job</class>
 				

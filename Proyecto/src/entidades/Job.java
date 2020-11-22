@@ -1,7 +1,6 @@
 package entidades;
 
 import java.io.Serializable;
-import java.util.Date;
 import javax.persistence.*;
 
 /**
@@ -23,9 +22,11 @@ public class Job implements Serializable {
     public Job() {
         super();
     }
+
     public int getId() {
         return id;
     }
+
     public void setId(int id) {
         this.id = id;
     }
