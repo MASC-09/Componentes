@@ -1,5 +1,8 @@
 package tester;
 
+import java.sql.Date;
+import java.time.LocalDate;
+import java.util.Calendar;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -18,27 +21,60 @@ public class tester {
 		// TODO Auto-generated method stub
 
         Set<Usuario> usuarios = new HashSet<Usuario>();
+        Set<Adjunto> adjuntos = new HashSet<Adjunto>();
 		try {
             startEntityManagerFactory();
             em.getTransaction().begin();
-            Departamento dpto = new Departamento();
-            dpto.setNombreSistema("Just whatever");
 
+            System.out.println("Creando Departamento");
+
+            Departamento dpto = new Departamento();
+            
+
+            dpto.setNombreSistema("Just whatever");
+            System.out.println("==== Agregando usuarios ====");
             for (int i=0; i<10; i++) {
                 Usuario user = new Usuario();
                 user.setNombre("test");
                 user.setContrasena("test");
                 user.setCorreo("correo@email.com");
                 usuarios.add(user);
+                System.out.println("Usuario: "+ user.toString());
             }
-            dpto.setUsuarios(usuarios);
 
+
+            dpto.setUsuarios(usuarios);
 			em.persist(dpto);
 			em.flush();
 			em.getTransaction().commit();
 
-            System.out.println(dpto);
+            System.out.println("Departamento: " + dpto.toString());
 
+
+            System.out.println("CREANDO CORREO");
+            em.getTransaction().begin();
+            
+            java.sql.Date date = new java.sql.Date((new java.util.Date()).getTime());
+
+            Correo correo = new Correo();
+            correo.setDate(date);
+            correo.setEmisor(dpto.getUsuarios().iterator().next());
+            correo.setDepto(dpto);
+            correo.setCuerpo("Cuerpo");
+
+
+            System.out.println("==== Creando Adjuntos ====");
+            for (int i=0; i<10; i++) {
+                Adjunto adjunto = new Adjunto();
+                adjunto.setAdjunto("test");
+                System.out.println("Adjunto: "+ adjunto.toString());
+                adjuntos.add(adjunto);
+            }
+            correo.setAdjuntos(adjuntos);
+
+			em.persist(correo);
+			em.flush();
+			em.getTransaction().commit();
 
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -73,8 +109,6 @@ public class tester {
                 }
             }
             em.close();
-            entityManagerFactory = null;
-        }
-    }
+            entityManagerFactory = null; } }
 
 }

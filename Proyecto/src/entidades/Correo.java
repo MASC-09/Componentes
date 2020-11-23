@@ -2,7 +2,6 @@ package entidades;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 import java.util.Set;
 import javax.persistence.*;
 
@@ -18,6 +17,7 @@ public class Correo implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int correoID;
 	private Date date;
 
@@ -28,6 +28,10 @@ public class Correo implements Serializable {
 	private String titulo;
 	private String cuerpo;
 
+    @ManyToOne
+    @JoinColumn(name="idDepartamento")
+    private Departamento depto;
+
 	@OneToMany(mappedBy="adjunto", cascade = CascadeType.ALL)
 	private Set<Adjunto> adjuntos;
 	private boolean estado;
@@ -35,6 +39,8 @@ public class Correo implements Serializable {
 	public Correo() {
 		super();
 	}
+
+
 
 	public int getCorreoID() {
 		return correoID;
@@ -91,4 +97,16 @@ public class Correo implements Serializable {
 	public void setEmisor(Usuario emisor) {
 		this.emisor = emisor;
 	}
+
+
+
+    public Departamento getDepto() {
+        return depto;
+    }
+
+
+
+    public void setDepto(Departamento depto) {
+        this.depto = depto;
+    }
 }

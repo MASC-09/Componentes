@@ -22,11 +22,11 @@ public class Departamento implements Serializable {
 	private int idDepartamento;
 	private String nombreSistema;
 
-	@OneToMany(mappedBy="correoID")
+	@OneToMany(mappedBy="correoID", cascade=CascadeType.ALL)
 	private Set<Correo> correos;
 
 	@OneToMany(mappedBy="idUsuario", cascade=CascadeType.ALL)
-	private Set<Usuario> Usuarios;
+	private Set<Usuario> usuarios;
 
 
 	public Departamento() {
@@ -50,18 +50,18 @@ public class Departamento implements Serializable {
 	}
 
 	public Set<Usuario> getUsuarios() {
-		return Usuarios;
+		return this.usuarios;
 	}
 
 	public void setUsuarios(Set<Usuario> usuarios) {
-		Usuarios = usuarios;
+		this.usuarios = usuarios;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((Usuarios == null) ? 0 : Usuarios.hashCode());
+		result = prime * result + ((usuarios == null) ? 0 : usuarios.hashCode());
 		result = prime * result + idDepartamento;
 		result = prime * result + ((nombreSistema == null) ? 0 : nombreSistema.hashCode());
 		return result;
@@ -76,10 +76,10 @@ public class Departamento implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Departamento other = (Departamento) obj;
-		if (Usuarios == null) {
-			if (other.Usuarios != null)
+		if (usuarios == null) {
+			if (other.usuarios != null)
 				return false;
-		} else if (!Usuarios.equals(other.Usuarios))
+		} else if (!usuarios.equals(other.usuarios))
 			return false;
 		if (idDepartamento != other.idDepartamento)
 			return false;

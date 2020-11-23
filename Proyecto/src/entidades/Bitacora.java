@@ -1,6 +1,8 @@
 package entidades;
 
 import java.io.Serializable;
+import java.sql.Date;
+
 import javax.persistence.*;
 
 /*
@@ -13,7 +15,7 @@ public class Bitacora implements Serializable {
 	@Id
 	private int bitacoraID;
 	private String accion;
-    private String fechaHora;
+    private Date fechaHora;
     private String entidad;
     private int entidadID;
 
@@ -31,11 +33,11 @@ public class Bitacora implements Serializable {
 		this.bitacoraID = bitacoraID;
 	}
 
-	public String getFechaHora() {
+	public Date getFechaHora() {
 		return fechaHora;
 	}
 
-	public void setFechaHora(String fechaHora) {
+	public void setFechaHora(Date fechaHora) {
 		this.fechaHora = fechaHora;
 	}
 
