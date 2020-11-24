@@ -66,7 +66,7 @@ public class tester {
             System.out.println("==== Creando Adjuntos ====");
             for (int i=0; i<10; i++) {
                 Adjunto adjunto = new Adjunto();
-                adjunto.setAdjunto("test");
+                adjunto.setNombreAdjunto("test");
                 System.out.println("Adjunto: "+ adjunto.toString());
                 adjuntos.add(adjunto);
             }

@@ -19,6 +19,9 @@ public class Job implements Serializable {
     @OneToOne
     private Correo correo;
 
+    @OneToOne
+    private Evento evento;
+
     public Job() {
         super();
     }
@@ -46,4 +49,5 @@ public class Job implements Serializable {
     public void setCorreo(Correo correo) {
         this.correo = correo;
     }
+    
 }

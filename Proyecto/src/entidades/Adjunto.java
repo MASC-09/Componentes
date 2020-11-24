@@ -8,19 +8,21 @@ import javax.persistence.*;
  *
  */
 @Entity
-
+@Table(name="Adjunto")
 public class Adjunto implements Serializable {
 
+	
 	private static final long serialVersionUID = 1L;
-
+	
 	@Id
 	private int id;
 	
     @ManyToOne
-	@JoinColumn(name = "idCorreo")
-	private Correo correo;
+	@JoinColumn(name = "idEvento")
+	private Evento evento;
 	
-	private String adjunto;
+	private String nombreAdjunto;
+	
 	public Adjunto() {
 		super();
 	}
@@ -33,59 +35,23 @@ public class Adjunto implements Serializable {
 		this.id = id;
 	}
 
-	public String getAdjunto() {
-		return adjunto;
+	public Evento getEvento() {
+		return evento;
 	}
 
-	public void setAdjunto(String adjunto) {
-		this.adjunto = adjunto;
+	public void setEvento(Evento evento) {
+		this.evento = evento;
 	}
 
-    public Correo getCorreo() {
-        return correo;
-    }
-
-    public void setCorreo(Correo correo) {
-        this.correo = correo;
-    }
-
-    public static long getSerialversionuid() {
-        return serialVersionUID;
-    }
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((adjunto == null) ? 0 : adjunto.hashCode());
-		result = prime * result + ((correo == null) ? 0 : correo.hashCode());
-		result = prime * result + id;
-		return result;
+	public String getNombreAdjunto() {
+		return nombreAdjunto;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Adjunto other = (Adjunto) obj;
-		if (adjunto == null) {
-			if (other.adjunto != null)
-				return false;
-		} else if (!adjunto.equals(other.adjunto))
-			return false;
-		if (correo == null) {
-			if (other.correo != null)
-				return false;
-		} else if (!correo.equals(other.correo))
-			return false;
-		if (id != other.id)
-			return false;
-		return true;
+	public void setNombreAdjunto(String nombreAdjunto) {
+		this.nombreAdjunto = nombreAdjunto;
 	}
 	
-    
+	
+	
+   
 }
