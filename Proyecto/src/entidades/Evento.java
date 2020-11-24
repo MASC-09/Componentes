@@ -20,7 +20,7 @@ public class Evento implements Serializable {
 	
 	@Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private int eventoID; 
+    private int idEvento; 
 	
 	private LocalDateTime tiempoInicio;
     private LocalDateTime tiempoFin;
@@ -31,25 +31,22 @@ public class Evento implements Serializable {
     private String titulo;
 	private String descripcion;
 
-    //ManyToMany?
-    @ManyToOne
-    @JoinColumn(name="idDepartamento")
-    private Departamento depto;
     
+    @ManyToMany
     @JoinTable(name = "Evento_Departamento", 
     		   joinColumns = { @JoinColumn(name = "idEvento") }, 
     		   inverseJoinColumns = { @JoinColumn(name = "idDepartamento") })
     		private Set<Departamento> departamentos;
     
 
-	@OneToMany(mappedBy="adjunto", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy="idAdjunto", cascade = CascadeType.ALL)
     private Set<Adjunto> adjuntos;
     
     private boolean completado;
     private ArrayList<String> participantes;
-
-    @OneToOne(cascade=CascadeType.ALL)
-    @JoinColumn(name="alertaID")
+    
+    @OneToOne( cascade = CascadeType.ALL)
+    @JoinColumn(name="idAlerta")
     private Alerta tipoAlerta;
 	
 	public Evento() {
@@ -57,11 +54,11 @@ public class Evento implements Serializable {
 	}
 
 	public int getEventoID() {
-		return eventoID;
+		return idEvento;
 	}
 
 	public void setEventoID(int eventoID) {
-		this.eventoID = eventoID;
+		this.idEvento = eventoID;
 	}
 
 	public LocalDateTime getTiempoInicio() {
@@ -104,12 +101,12 @@ public class Evento implements Serializable {
 		this.descripcion = descripcion;
 	}
 
-	public Departamento getDepto() {
-		return depto;
+	public Set<Departamento> getDeptos() {
+		return departamentos;
 	}
 
-	public void setDepto(Departamento depto) {
-		this.depto = depto;
+	public void setDeptos(Set<Departamento> depto) {
+		this.departamentos = depto;
 	}
 
 	public Set<Adjunto> getAdjuntos() {

@@ -32,7 +32,7 @@ public class Correo implements Serializable {
     @JoinColumn(name="idDepartamento")
     private Departamento depto;
 
-	@OneToMany(mappedBy="adjunto", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy="", cascade = CascadeType.ALL)
 	private Set<Adjunto> adjuntos;
 	private boolean estado;
 

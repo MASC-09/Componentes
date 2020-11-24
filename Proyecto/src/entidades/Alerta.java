@@ -19,14 +19,15 @@ public class Alerta implements Serializable {
 	
 	@Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private int alertaID;
+    private int idAlerta;
     
     private String nombreAlerta;
     private LocalDateTime fechaFinal;
     private LocalDateTime fechaProx;
     private int intervalo;
 
-	@OneToOne(mappedBy = "alertaID")
+    @OneToOne( cascade = CascadeType.ALL)
+    @JoinColumn(name="idEvento")
 	private Evento evento;
 
 
@@ -35,13 +36,13 @@ public class Alerta implements Serializable {
 	}
 
 
-	public int getAlertaID() {
-		return alertaID;
+	public int getIdAlerta() {
+		return idAlerta;
 	}
 
 
-	public void setAlertaID(int alertaID) {
-		this.alertaID = alertaID;
+	public void setIdAlerta(int idAlerta) {
+		this.idAlerta = idAlerta;
 	}
 
 

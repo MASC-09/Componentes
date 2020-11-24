@@ -15,7 +15,8 @@ public class Adjunto implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	private int id;
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int idAdjunto;
 	
     @ManyToOne
 	@JoinColumn(name = "idEvento")
@@ -27,12 +28,12 @@ public class Adjunto implements Serializable {
 		super();
 	}
 
-	public int getId() {
-		return id;
+	public int getIdAdjunto() {
+		return idAdjunto;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setIdAdjunto(int idAdjunto) {
+		this.idAdjunto = idAdjunto;
 	}
 
 	public Evento getEvento() {

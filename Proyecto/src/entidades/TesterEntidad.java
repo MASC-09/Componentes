@@ -23,12 +23,14 @@ public class TesterEntidad {
 			Departamento Consultoria = new Departamento();
 			Consultoria.setNombreSistema("Consultoria en Teconolog�as Emergentes");
 			
-			
+			Set<Departamento> deptos = new HashSet<Departamento>();
 			
 			Usuario u = new Usuario();
 			u.setCorreo("msoto095@gmial.com");
 			u.setContrasena("1234");
 			u.setDepartamento(Consultoria);
+			
+			deptos.add(Consultoria);
 			
 			ArrayList<String> invitados = new ArrayList();
 			invitados.add("hola@gmail.com");
@@ -38,15 +40,13 @@ public class TesterEntidad {
 			event.setTitulo("Dia de Accion de Gracias");
 			event.setDescripcion("Realizacion de comida con el fin de celebrar el dia de Accion de gracias! Yay nos cagamos ne los indios");
 			event.setCompletado(false);
-			event.setDepto(Consultoria);
-			event.setEventoID(0);
+			event.setDeptos(deptos);
 			event.setParticipantes(invitados);
 			
 			event.setTiempoInicio(LocalDateTime.of(2020, Month.NOVEMBER, 27, 18, 30));
 			event.setTiempoFin(LocalDateTime.of(2020, Month.NOVEMBER, 27, 18, 30));
 			
 			Alerta alerta = new Alerta();
-			alerta.setAlertaID(0);
 			alerta.setEvento(event);
 			alerta.setFechaFinal(event.getTiempoInicio());
 			alerta.setNombreAlerta("Una vez a la semana");

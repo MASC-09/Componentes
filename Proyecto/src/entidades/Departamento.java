@@ -23,10 +23,10 @@ public class Departamento implements Serializable {
 	private String nombreSistema;
 
 
-	@ManyToMany (mappedBy="Evento", cascade=CascadeType.ALL)
+	@ManyToMany (cascade=CascadeType.ALL)
 	private Set<Evento> eventos;
 
-	@OneToMany(mappedBy="Usuario", cascade=CascadeType.ALL)
+	@OneToMany(mappedBy="idUsuario", cascade=CascadeType.ALL)
 	private Set<Usuario> usuarios;
 	
 
