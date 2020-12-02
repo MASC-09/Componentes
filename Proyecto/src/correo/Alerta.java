@@ -1,9 +1,10 @@
-package entidades;
+package correo;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import javax.persistence.*;
-import entidades.Evento;
+
+import correo.Evento;
 
 /**
  * Entity implementation class for Entity: Alerta

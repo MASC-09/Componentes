@@ -10,7 +10,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import entidades.*;
+import correo.*;
 
 public class tester {
 
@@ -109,6 +109,8 @@ public class tester {
                 }
             }
             em.close();
-            entityManagerFactory = null; } }
+            entityManagerFactory = null; 
+            }
+        }
 
 }

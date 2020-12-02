@@ -1,4 +1,4 @@
-package entidades;
+package correo;
 
 import java.io.Serializable;
 import javax.persistence.*;

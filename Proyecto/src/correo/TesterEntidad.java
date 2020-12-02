@@ -1,4 +1,4 @@
-package entidades;
+package correo;
 
 import java.time.LocalDateTime;
 import java.time.Month;
@@ -32,32 +32,32 @@ public class TesterEntidad {
 			
 			deptos.add(Consultoria);
 			
-			ArrayList<String> invitados = new ArrayList();
-			invitados.add("hola@gmail.com");
-			
-			Evento event = new Evento();
-			event.setCreador(u);
-			event.setTitulo("Dia de Accion de Gracias");
-			event.setDescripcion("Realizacion de comida con el fin de celebrar el dia de Accion de gracias! Yay nos cagamos ne los indios");
-			event.setCompletado(false);
-			event.setDeptos(deptos);
-			event.setParticipantes(invitados);
-			
-			event.setTiempoInicio(LocalDateTime.of(2020, Month.NOVEMBER, 27, 18, 30));
-			event.setTiempoFin(LocalDateTime.of(2020, Month.NOVEMBER, 27, 18, 30));
-			
-			Alerta alerta = new Alerta();
-			alerta.setEvento(event);
-			alerta.setFechaFinal(event.getTiempoInicio());
-			alerta.setNombreAlerta("Una vez a la semana");
-			alerta.setIntervalo(7);
-			alerta.setFechaProx(alerta.getFechaFinal().minusDays(Long.valueOf(alerta.getIntervalo())));
-			
-			Set<Usuario> miembros = new HashSet<Usuario>();
-			miembros.add(u);
-			
-			event.setTipoAlerta(alerta);
-			Consultoria.setUsuarios(miembros);
+//			ArrayList<String> invitados = new ArrayList();
+//			invitados.add("hola@gmail.com");
+//			
+//			Evento event = new Evento();
+//			event.set(u);
+//			event.setTitulo("Dia de Accion de Gracias");
+//			event.setDescripcion("Realizacion de comida con el fin de celebrar el dia de Accion de gracias! Yay nos cagamos ne los indios");
+//			event.setCompletado(false);
+//			event.setDeptos(deptos);
+//			event.setParticipantes(invitados);
+//			
+//			event.setTiempoInicio(LocalDateTime.of(2020, Month.NOVEMBER, 27, 18, 30));
+//			event.setTiempoFin(LocalDateTime.of(2020, Month.NOVEMBER, 27, 18, 30));
+//			
+//			Alerta alerta = new Alerta();
+//			alerta.setEvento(event);
+//			alerta.setFechaFinal(event.getTiempoInicio());
+//			alerta.setNombreAlerta("Una vez a la semana");
+//			alerta.setIntervalo(7);
+//			alerta.setFechaProx(alerta.getFechaFinal().minusDays(Long.valueOf(alerta.getIntervalo())));
+//			
+//			Set<Usuario> miembros = new HashSet<Usuario>();
+//			miembros.add(u);
+//			
+//			event.setTipoAlerta(alerta);
+//			Consultoria.setUsuarios(miembros);
 //			
 //					
 //			
@@ -70,15 +70,15 @@ public class TesterEntidad {
 //			curso.setNombre("Matematica");
 //			
 //			est.setCursos(new HashSet<Curso>());
-//			est.getCursos().add(curso);
-		
-			em.getTransaction().begin();
-			em.persist(event);
-			em.persist(u);
-			em.persist(Consultoria);
-			em.persist(alerta);
-			em.getTransaction().commit();
-			System.out.println("********************************");
+////			est.getCursos().add(curso);
+//		
+//			em.getTransaction().begin();
+//			em.persist(event);
+//			em.persist(u);
+//			em.persist(Consultoria);
+//			em.persist(alerta);
+//			em.getTransaction().commit();
+//			System.out.println("********************************");
 			
 			stopEntityManagerFactory();
 		} catch (Exception e) {
